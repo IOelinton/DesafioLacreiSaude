@@ -1,15 +1,115 @@
-"use client"
+"use client";
 
 import { useRouter } from "next/navigation";
+import React, { useState, useEffect } from "react";
 
-import {CreateAcountContainer} from "./createAccount.style"
+import { CreateAcountContainer } from "./createAccount.style";
 import { Buttons } from "@/components";
 import { InputField } from "@/components/LoginForm/LoginForm.style";
 
-import React from "react";
-
 export default function PasswordReset() {
   const router = useRouter();
+
+  // Estados para os campos
+  const [name, setName] = useState<string>("");
+  const [lastName, setLastName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [termsAccepted, setTermsAccepted] = useState<boolean>(false);
+  const [ageConfirmed, setAgeConfirmed] = useState<boolean>(false);
+
+  // Estados para validações específicas da senha
+  const [isLengthValid, setIsLengthValid] = useState<boolean>(false);
+  const [hasUppercase, setHasUppercase] = useState<boolean>(false);
+  const [hasLowercase, setHasLowercase] = useState<boolean>(false);
+  const [hasNumber, setHasNumber] = useState<boolean>(false);
+  const [hasSpecialChar, setHasSpecialChar] = useState<boolean>(false);
+
+  const [isEmailValid, setIsEmailValid] = useState<boolean>(false);
+  const [isFormValid, setIsFormValid] = useState<boolean>(false);
+
+  // Função para validar o email
+  const validateEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  // Função para validar os requisitos da senha
+  useEffect(() => {
+    setIsLengthValid(password.length >= 8);
+    setHasUppercase(/[A-Z]/.test(password));
+    setHasLowercase(/[a-z]/.test(password));
+    setHasNumber(/\d/.test(password));
+    setHasSpecialChar(/[@$!%*?&]/.test(password));
+  }, [password]);
+
+  // Monitorar mudanças nos campos e validar o formulário
+  useEffect(() => {
+    setIsEmailValid(validateEmail(email));
+
+    // O formulário é válido apenas se todos os campos estiverem preenchidos e válidos
+    setIsFormValid(
+      name.trim() !== "" &&
+        lastName.trim() !== "" &&
+        isEmailValid &&
+        isLengthValid &&
+        hasUppercase &&
+        hasLowercase &&
+        hasNumber &&
+        hasSpecialChar &&
+        termsAccepted &&
+        ageConfirmed
+    );
+  }, [
+    name,
+    lastName,
+    email,
+    password,
+    termsAccepted,
+    ageConfirmed,
+    isEmailValid,
+    isLengthValid,
+    hasUppercase,
+    hasLowercase,
+    hasNumber,
+    hasSpecialChar,
+  ]);
+
+  type userData = {
+    name: string;
+    lastName: string;
+    email: string;
+    password: string;
+    termsAccepted: boolean;
+  }
+
+  const saveToLocalStorage = (data: userData) => {
+   const existingData = localStorage.getItem("userData");
+   const users = existingData ? JSON.parse(existingData) : [];
+   users.push(data);
+   localStorage.setItem("userData", JSON.stringify(users));
+  };
+
+  // Função para lidar com a submissão do formulário
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+
+    if (isFormValid) {
+      saveToLocalStorage({
+        name,
+        lastName,
+        email,
+        password,
+        termsAccepted,
+      });
+
+      alert("Conta criada com sucesso!");
+      router.push("/home");
+    } else {
+      alert("Por favor, preencha todos os campos corretamente.");
+    }
+  };
+
   return (
     <CreateAcountContainer>
       <h2>Crie um nova conta:</h2>
@@ -22,7 +122,8 @@ export default function PasswordReset() {
           id="name"
           name="name"
           placeholder="Insira seu nome"
-          onChange={() => {}}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           required
         />
       </InputField>
@@ -34,57 +135,95 @@ export default function PasswordReset() {
           id="lastName"
           name="lastName"
           placeholder="Insira seu sobrenome"
-          onChange={() => {}}
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
           required
         />
       </InputField>
 
-     <InputField className="inputField">
+      <InputField>
         <label htmlFor="email">E-mail:</label>
         <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Insira seu email"
-        onChange={() => {}}
-        required
-      />
-    </InputField>
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Insira seu email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        {!isEmailValid && email && (
+          <span className="error">Por favor, insira um email válido.</span>
+        )}
+      </InputField>
 
-    <InputField>
+      <InputField>
         <label htmlFor="password">Senha:</label>
         <input
           type="password"
           id="password"
           name="password"
           placeholder="Insira sua senha"
-          onChange={() => {}}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
           required
         />
       </InputField>
 
-      <div className="passwordValidarion">
+      <div className="passwordValidations">
         <h3>A senha deve conter, no mínimo:</h3>
-        <input type="checkbox" id="uppercase" name="uppercase" disabled/> Maiúscula
-        <input type="checkbox" id="lowercase" name="lowercase" disabled/> Minúscula
-        <input type="checkbox" id="number" name="number" disabled/> Número
-        <input type="checkbox" id="special" name="special" disabled/> Caractere especial
+        <ul className="requirements">
+          <li className={isLengthValid ? "valid" : "invalid"}>8 caracteres</li>
+          <li className={hasUppercase ? "valid" : "invalid"}>Uma letra maiúscula</li>
+          <li className={hasLowercase ? "valid" : "invalid"}>Uma letra minúscula</li>
+          <li className={hasNumber ? "valid" : "invalid"}>Um número</li>
+          <li className={hasSpecialChar ? "valid" : "invalid"}>
+            Um caractere especial (@, $, !, %, *, ?, &)
+          </li>
+        </ul>
       </div>
 
       <div className="confirmArea">
-        <input type="checkbox" id="confirm" name="confirm" disabled/> Li e concordo com os termos de uso
-        <input type="checkbox" id="confirm" name="confirm" disabled/> Tenho 18 anos ou mais
+        <label>
+          <input
+            type="checkbox"
+            id="terms"
+            name="terms"
+            checked={termsAccepted}
+            onChange={(e) => setTermsAccepted(e.target.checked)}
+          />{" "}
+          Li e concordo com os <span>termos de uso</span>
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            id="age"
+            name="age"
+            checked={ageConfirmed}
+            onChange={(e) => setAgeConfirmed(e.target.checked)}
+          />{" "}
+          Tenho <span>18 anos</span> ou mais
+        </label>
       </div>
 
-    <div className="buttons">
-      <Buttons type="submit" variant="primary" onClick={() => {}} status={false}>
-        Criar Conta
-      </Buttons>
-      <Buttons type="button"  variant="secondary" onClick={() => router.push('/home')} status={true}>
-        Voltar
-      </Buttons>
+      <div className="buttons">
+        <Buttons
+          type="submit"
+          variant="primary"
+          onClick={handleSubmit}
+          status={isFormValid}
+        >
+          Criar Conta
+        </Buttons>
+        <Buttons
+          type="button"
+          variant="secondary"
+          onClick={() => router.push("/home")}
+          status={true}
+        >
+          Voltar
+        </Buttons>
       </div>
-
     </CreateAcountContainer>
   );
 }
