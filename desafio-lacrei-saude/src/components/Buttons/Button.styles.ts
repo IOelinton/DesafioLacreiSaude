@@ -4,6 +4,8 @@ export const Button = styled.button`
   height: 48px;
   border-radius: 10px;
   padding: 0 32px;
+  font-weight: bold;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 
   &.primaryButton {
     background-color: #018762;

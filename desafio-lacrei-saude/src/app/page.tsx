@@ -1,13 +1,9 @@
 "use client";
 
-import {Header, Footer, LoginForm} from "@/components";
-import { MainContent } from "./page.style";
+import {LoginForm} from "@/components";
+
 export default function Home() {
   return (
-    <MainContent>
-      <Header/>
-      <LoginForm/>
-      <Footer/>
-    </MainContent>
+    <LoginForm/>
   );
 }

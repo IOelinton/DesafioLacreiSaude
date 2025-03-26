@@ -12,9 +12,12 @@ const LoginForm = () => {
   return (
     <LoginFormContainer>
       <FormContainer>
-        <h2>Bem-vindo ao Lacrei</h2>
+        <h2>
+          Bem-vindo ao <span>Lacrei.</span>
+        </h2>
+        <h3>Entre ou cadastre.</h3>
         <InputField>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">E-mail:</label>
           <input
             type="email"
             id="email"
@@ -24,7 +27,7 @@ const LoginForm = () => {
           />
         </InputField>
         <InputField>
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Senha:</label>
           <input
             type="password"
             id="password"

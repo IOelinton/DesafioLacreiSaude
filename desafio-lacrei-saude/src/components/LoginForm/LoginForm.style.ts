@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const LoginFormContainer = styled.form`
+export const LoginFormContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,6 +11,18 @@ export const LoginFormContainer = styled.form`
   h2 {
     color: #2d2d2d;
     font-size: 32px;
+    font-weight: bold;
+    padding-bottom: 8px;
+
+    span {
+      color: #007756;
+      font-style: oblique;
+    }
+  }
+
+  h3 {
+    color: #2d2d2d;
+    font-size: 20px;
     font-weight: bold;
     padding-bottom: 32px;
   }
@@ -31,7 +43,6 @@ export const LoginFormContainer = styled.form`
 `;
 
 export const FormContainer = styled.form`
-  padding: 36px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,16 +52,14 @@ export const FormContainer = styled.form`
 
   .buttons {
     justify-content: space-between;
-
     display: flex;
     flex-direction: row-reverse;
+    padding-top: 12px;
   }
 
   .buttons button {
-    font-weight: bold;
     font-size: 16px;
     width: 192px;
-    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   }
 `;
 
