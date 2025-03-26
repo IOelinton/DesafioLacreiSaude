@@ -15,7 +15,7 @@ const Header = () => {
             <Image src={Logosigla} alt="LS" className="logoSigla"/>
             <Image src={LogoLacrei} alt="lacrei saúde" />
         </div>
-        <Buttons variant="secundary">Entrar</Buttons>
+        <Buttons variant="secondary">Entrar</Buttons>
     </HeaderContainer>
   );
 };

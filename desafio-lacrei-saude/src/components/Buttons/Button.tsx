@@ -3,7 +3,7 @@ import React from "react";
 import {Button} from "./Button.styles";
 
 interface ButtonProps {
-    variant: "primary" | "secundary";
+    variant: "primary" | "secondary";
     children: React.ReactNode;
 }
 
