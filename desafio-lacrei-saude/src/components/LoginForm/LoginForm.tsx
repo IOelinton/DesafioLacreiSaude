@@ -15,14 +15,28 @@ const LoginForm = () => {
   const router = useRouter();
 
   const [email, setEmail] = useState("");
-  const handleInput = (e) => {
-    setEmail(e.target.value);
+  const [password, setPassword] = useState("");
+  const [status, setStatus] = useState(false);
+
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const {name, value} = e.target;
+    if (name==="email"){
+      setEmail(value)
+    }
+    if (name==="password"){
+      setPassword(value)}
+
+      if(isEmailValid(email) && password){
+        setStatus(true)
+      }
   };
 
-  const isEmailValid = (email) => {
+
+  const isEmailValid = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
+
 
   return (
     <LoginFormContainer>
@@ -49,17 +63,28 @@ const LoginForm = () => {
             id="password"
             name="password"
             placeholder="Insira sua senha"
+            onChange={handleInput}
             required
           />
         </InputField>
+        <div>
+          <h1>{email}</h1>
+          <h2>{password}</h2>
+        </div>
         <div className="buttons">
-          <Buttons type="submit" variant="primary" status={isEmailValid(email)}>
+          <Buttons
+            type="submit"
+            variant="primary"
+            status={status}
+            onClick={() => router.push("/profile")}
+          >
             Entrar
           </Buttons>
           <Buttons
-            type="submit"
+            type="button"
             variant="secondary"
             onClick={() => router.push("/createAccount")}
+            status={true}
           >
             Criar conta
           </Buttons>

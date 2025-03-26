@@ -35,10 +35,10 @@ const handleInput = (e: React.ChangeEvent<HTMLInputElement>) =>{
       />
     </InputField>
     <div className="buttons">
-      <Buttons variant="primary" onClick={() => alert(`Link enviado para: ${email}`)} status={isEmailValid(email)}>
+      <Buttons type="submit" variant="primary" onClick={() => alert(`Link enviado para: ${email}`)} status={isEmailValid(email)}>
         Enviar Link
       </Buttons>
-      <Buttons variant="secondary" onClick={() => router.push("/home")} status={true}>
+      <Buttons type="submit"  variant="secondary" onClick={() => router.push("/home")} status={true}>
         Voltar
       </Buttons>
     </div>
