@@ -1,7 +1,8 @@
-import React from "react";
+'use client';
+
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 
 import { Buttons } from "@/components";
 
@@ -14,29 +15,41 @@ import {
 const LoginForm = () => {
   const router = useRouter();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [status, setStatus] = useState(false);
+  const [email, setEmail] = useState<string>(""); // Tipagem explícita
+  const [password, setPassword] = useState<string>("");
+  const [status, setStatus] = useState<boolean>(false);
 
-  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const {name, value} = e.target;
-    if (name==="email"){
-      setEmail(value)
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    const { name, value } = e.target;
+    if (name === "email") {
+      setEmail(value);
     }
-    if (name==="password"){
-      setPassword(value)}
-
-      if(isEmailValid(email) && password){
-        setStatus(true)
-      }
+    if (name === "password") {
+      setPassword(value);
+    }
   };
 
+  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>): void => {
+    e.preventDefault();
+    if (status) {
+      router.push("/profile");
+    } else {
+      alert("Por favor, preencha os campos corretamente.");
+    }
+  };
 
-  const isEmailValid = (email: string) => {
+  const isEmailValid = (email: string): boolean => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
   };
 
+  useEffect(() => {
+    if (isEmailValid(email) && password) {
+      setStatus(true);
+    } else {
+      setStatus(false);
+    }
+  }, [email, password]);
 
   return (
     <LoginFormContainer>
@@ -67,16 +80,12 @@ const LoginForm = () => {
             required
           />
         </InputField>
-        <div>
-          <h1>{email}</h1>
-          <h2>{password}</h2>
-        </div>
         <div className="buttons">
           <Buttons
             type="submit"
             variant="primary"
             status={status}
-            onClick={() => router.push("/profile")}
+            onClick={handleSubmit}
           >
             Entrar
           </Buttons>
