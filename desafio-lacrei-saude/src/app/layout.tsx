@@ -1,5 +1,8 @@
-import type { Metadata } from "next";
+"use client";
+
+import { GlobalStyle } from "@/styles/GlobalStyles";
 import { Geist, Geist_Mono } from "next/font/google";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,19 +14,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Desafio Lacrei Saúde",
-  description: "Desafio Lacrei Saúde",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <GlobalStyle />
         {children}
       </body>
     </html>

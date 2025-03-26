@@ -1,7 +1,12 @@
+"use client";
+
+import {Header, Footer} from "@/components";
+import { MainContent } from "./page.style";
 export default function Home() {
   return (
-    <main>
-      <h1>Desafio Lacrei Saúde</h1>
-    </main>
+    <MainContent>
+      <Header/>
+      <Footer/>
+    </MainContent>
   );
 }
