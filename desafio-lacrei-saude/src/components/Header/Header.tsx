@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import {HeaderContainer} from "./Header.styles";
 
@@ -12,10 +13,10 @@ const Header = () => {
   return (
     <HeaderContainer>
         <div className="logo-area">
-            <Image src={Logosigla} alt="LS" className="logoSigla"/>
-            <Image src={LogoLacrei} alt="lacrei saúde" />
+            <Link href="/home"><Image src={Logosigla} alt="LS" className="logoSigla"/></Link>
+            <Link href="/home"><Image src={LogoLacrei} alt="lacrei saúde" /></Link>
         </div>
-        <Buttons variant="secondary">Entrar</Buttons>
+        <Buttons variant="secondary">Ajuda</Buttons>
     </HeaderContainer>
   );
 };

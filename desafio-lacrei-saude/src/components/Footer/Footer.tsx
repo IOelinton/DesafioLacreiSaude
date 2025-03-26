@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import logoCompleta from "../../../public/logos/logo-lacrei-saude-2.fe01ece5.svg";
 import  Facebook  from "../../../public/icons/facebook.c4e93695.svg";
@@ -12,7 +13,7 @@ import {FooterContainer} from "./Footer.styles"
 const Footer = () => {
     return (
         <FooterContainer>
-            <Image src={logoCompleta} alt="Logo Lacrei Saúde" className="logoFooter" />
+            <Link href="/home"><Image src={logoCompleta} alt="Logo Lacrei Saúde" className="logoFooter" /></Link>
             <div className="footer-right">
                 <p>© 2025 Lacrei Saúde. Todos os direitos reservados.</p>
                 <div className="socias">

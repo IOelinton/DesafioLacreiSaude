@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 import { Buttons } from "@/components";
 
@@ -44,7 +45,7 @@ const LoginForm = () => {
             Criar conta
           </Buttons>
         </div>
-        <a href="/resetSenha"> Esqueceu a senha?</a>
+        <Link href="/passwordReset"> Esqueceu a senha?</Link>
       </FormContainer>
     </LoginFormContainer>
   );
