@@ -1,5 +1,7 @@
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 import { Buttons } from "@/components";
 
@@ -10,6 +12,18 @@ import {
 } from "./LoginForm.style";
 
 const LoginForm = () => {
+  const router = useRouter();
+
+  const [email, setEmail] = useState("");
+  const handleInput = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const isEmailValid = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   return (
     <LoginFormContainer>
       <FormContainer>
@@ -24,6 +38,7 @@ const LoginForm = () => {
             id="email"
             name="email"
             placeholder="Insira seu email"
+            onChange={handleInput}
             required
           />
         </InputField>
@@ -38,10 +53,14 @@ const LoginForm = () => {
           />
         </InputField>
         <div className="buttons">
-          <Buttons type="submit" variant="primary">
+          <Buttons type="submit" variant="primary" status={isEmailValid(email)}>
             Entrar
           </Buttons>
-          <Buttons type="submit" variant="secondary">
+          <Buttons
+            type="submit"
+            variant="secondary"
+            onClick={() => router.push("/createAccount")}
+          >
             Criar conta
           </Buttons>
         </div>

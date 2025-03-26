@@ -16,7 +16,7 @@ const Header = () => {
             <Link href="/home"><Image src={Logosigla} alt="LS" className="logoSigla"/></Link>
             <Link href="/home"><Image src={LogoLacrei} alt="lacrei saúde" /></Link>
         </div>
-        <Buttons variant="secondary">Ajuda</Buttons>
+        <Buttons variant="secondary" onClick={() => alert("clicou em ajuda")}>Ajuda</Buttons>
     </HeaderContainer>
   );
 };

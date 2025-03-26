@@ -7,6 +7,8 @@ export const Button = styled.button`
   font-weight: bold;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
 
+  /* Estilos primary Button */
+
   &.primaryButton {
     background-color: #018762;
     color: #ffffff;
@@ -16,6 +18,19 @@ export const Button = styled.button`
     background-color: #007756;
     cursor: pointer;
   }
+  &.primaryButton:disabled {
+    background-color: #c4c4c4;
+    color: #fff;
+    cursor: not-allowed;
+  }
+
+  &.primaryButton:disabled:hover {
+    background-color: #c4c4c4;
+    color: #fff;
+    cursor: not-allowed;
+  }
+
+  /* Estilos Secondary Button */
 
   &.secondaryButton {
     background-color: var(--background-invert-400);
