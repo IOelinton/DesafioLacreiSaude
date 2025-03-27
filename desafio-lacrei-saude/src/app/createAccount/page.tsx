@@ -102,7 +102,6 @@ export default function PasswordReset() {
         password,
         termsAccepted,
       });
-
       alert("Conta criada com sucesso!");
       router.push("/home");
     } else {

@@ -1,9 +1,22 @@
+"use client"
+
 import React from "react";
 
-const Profile = () => {
-    return(
-        <h1>Pagina de profissionais</h1>
-    )
-}
+import { profissionais, Profissional } from "@/mocks/profissionais";
 
-export default Profile
+import { ProfiCard } from "@/components";
+import { ProfileContent } from "./professional.style";
+
+const Profile = () => {
+  return (
+    <ProfileContent>
+      {
+      profissionais.map((profissional:Profissional, index: number ) => (
+        <ProfiCard key={index} name={profissional.name} specialty={profissional.specialty} email={profissional.email}/>
+        ))
+        }
+    </ProfileContent>
+  );
+};
+
+export default Profile;
