@@ -11,21 +11,29 @@ import {
   InputField,
 } from "./LoginForm.style";
 
+type User = {
+  name: string;
+  lastName: string;
+  email: string;
+  password: string;
+};
+
 const LoginForm = () => {
   const router = useRouter();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [status, setStatus] = useState(false);
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [status, setStatus] = useState<boolean>(false);
+  const [users, setUsers] = useState<User[]>([]); // Tipagem corrigida
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const {name, value} = e.target;
-    if (name==="email"){
-      setEmail(value)
+    const { name, value } = e.target;
+    if (name === "email") {
+      setEmail(value);
     }
-    if (name==="password"){
-      setPassword(value)}
-
+    if (name === "password") {
+      setPassword(value);
+    }
   };
 
   const isEmailValid = (email: string) => {
@@ -41,6 +49,20 @@ const LoginForm = () => {
     }
   }, [email, password]);
 
+  useEffect(() => {
+    const storedUsers = JSON.parse(localStorage.getItem("userData") || "[]");
+    setUsers(storedUsers);
+    console.log(storedUsers);
+  }, []);
+
+  const handleRedirect = () => {
+    const user = users.find((user) => user.email === email); // Tipagem corrigida
+    if (user && user.password === password) {
+      router.push("/profile");
+    } else {
+      alert("Usuário ou senha inválidos");
+    }
+  };
 
   return (
     <LoginFormContainer>
@@ -75,10 +97,10 @@ const LoginForm = () => {
         </InputField>
         <div className="buttons">
           <Buttons
-            type="submit"
+            type="button"
             variant="primary"
             status={status}
-            onClick={() => router.push("/profile")}
+            onClick={handleRedirect} // Corrigido para usar handleRedirect
           >
             Entrar
           </Buttons>
@@ -96,5 +118,4 @@ const LoginForm = () => {
     </LoginFormContainer>
   );
 };
-
 export default LoginForm;

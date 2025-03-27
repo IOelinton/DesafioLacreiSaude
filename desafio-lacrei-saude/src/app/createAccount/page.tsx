@@ -84,6 +84,7 @@ export default function PasswordReset() {
   }
 
   const saveToLocalStorage = (data: userData) => {
+  console.log(data)
    const existingData = localStorage.getItem("userData");
    const users = existingData ? JSON.parse(existingData) : [];
    users.push(data);

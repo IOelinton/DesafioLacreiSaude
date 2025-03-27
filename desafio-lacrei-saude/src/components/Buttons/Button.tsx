@@ -7,7 +7,7 @@ interface ButtonProps {
     variant: "primary" | "secondary";
     children: React.ReactNode;
     status: boolean; // Define se o botão está ativo ou desativado
-    onClick: () => void;
+    onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const Buttons = ({ type="button", variant, children, status, onClick }: ButtonProps) => {
