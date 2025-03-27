@@ -112,7 +112,7 @@ export default function PasswordReset() {
 
   return (
     <CreateAcountContainer>
-      <h2>Crie um nova conta:</h2>
+      <h2>Crie uma conta <span>Lacrei.</span></h2>
       <p>Insira seus dados para criar uma nova conta:</p>
 
       <InputField>

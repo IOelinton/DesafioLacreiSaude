@@ -7,4 +7,14 @@ export const MainContent = styled.main`
   min-height: 100vh;
   justify-content: space-between;
   flex-direction: column;
+
+  /* Smartphones*/
+  @media (max-width: 428px) {
+    width: 100%;
+  }
+
+  /* Tablets */
+  @media (max-width: 834px) {
+    width: 100%;
+  }
 `;

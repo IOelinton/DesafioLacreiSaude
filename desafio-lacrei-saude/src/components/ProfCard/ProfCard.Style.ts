@@ -6,7 +6,6 @@ export const ProfiCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  text-align: right;
   padding: 32px;
   margin-bottom: 32px;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);

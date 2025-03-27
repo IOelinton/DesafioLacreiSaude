@@ -6,7 +6,7 @@ import { Working } from './WorkinProgress.style';
 const WorkInProgress = () => {
   return (
     <Working>
-            <h1 className="error">404</h1>
+            <h1 className="error">503!</h1>
             <p>Oops! Esta página está em manutenção.</p>
             <p>
                 Por favor, volte mais tarde para ver as mudanças.

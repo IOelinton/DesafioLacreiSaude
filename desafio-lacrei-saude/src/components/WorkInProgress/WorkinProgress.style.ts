@@ -11,15 +11,19 @@ export const Working = styled.div`
 
   .error {
     font-weight: bold;
-    color: var(--border-accent-400);
+    color: var(--text-warning-400);
+    font-size: var(--Headline-Xl);
     padding-bottom: 32px;
+    background-color: #f5f5f5;
   }
 
   p {
     font-size: 18px;
+    background-color: #f5f5f5;
   }
 
   .linkRedirect {
+    background-color: #f5f5f5;
     color: #007756;
     font-size: 20px;
     font-weight: 500;

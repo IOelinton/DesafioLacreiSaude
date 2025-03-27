@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HeaderContainer = styled.header`
   width: 100%;
-  padding: 1.5rem 1rem;
+  padding: 16px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -16,13 +16,18 @@ export const HeaderContainer = styled.header`
     align-items: center;
     justify-content: space-around;
     padding: 7px;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    & .logoSigla {
+      margin-right: 15px;
+    }
   }
 
-  .logo-area:hover {
-    cursor: pointer;
-  }
-
-  .logo-area .logoSigla {
-    margin-right: 15px;
+  @media (min-width: 360px) and (max-width: 720px) {
+    padding: 16px 0;
+    justify-content: space-around;
   }
 `;

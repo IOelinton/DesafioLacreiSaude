@@ -13,21 +13,23 @@ export const Button = styled.button`
     background-color: #018762;
     color: #ffffff;
     transition: 0.1s ease-in;
-  }
-  &.primaryButton:hover {
-    background-color: #007756;
-    cursor: pointer;
-  }
-  &.primaryButton:disabled {
-    background-color: #c4c4c4;
-    color: #fff;
-    cursor: not-allowed;
-  }
 
-  &.primaryButton:disabled:hover {
-    background-color: #c4c4c4;
-    color: #fff;
-    cursor: not-allowed;
+    &:hover {
+      background-color: #007756;
+      cursor: pointer;
+    }
+
+    &:disabled {
+      background-color: #c4c4c4;
+      color: #fff;
+      cursor: not-allowed;
+
+      &:hover {
+        background-color: #c4c4c4;
+        color: #fff;
+        cursor: not-allowed;
+      }
+    }
   }
 
   /* Estilos Secondary Button */
@@ -37,10 +39,15 @@ export const Button = styled.button`
     border: solid 2px #018762;
     color: #018762;
     transition: 0.1s ease-in;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #b2dfd0;
+    }
   }
 
-  &.secondaryButton:hover {
-    cursor: pointer;
-    background-color: #b2dfd0;
+  /* Smartphones*/
+  @media (min-width: 360px) and (max-width: 720px) {
+    padding: 0 16px;
   }
 `;

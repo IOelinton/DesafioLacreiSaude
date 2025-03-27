@@ -16,6 +16,8 @@ export const LoginFormContainer = styled.div`
 
     span {
       color: #007756;
+      font-size: 32px;
+      font-weight: bold;
       font-style: oblique;
     }
   }
@@ -34,11 +36,11 @@ export const LoginFormContainer = styled.div`
     font-weight: bold;
     text-decoration: #007756;
     padding-top: 14px;
-  }
 
-  a:hover {
-    color: #007756;
-    cursor: pointer;
+    &:hover {
+      color: #007756;
+      cursor: pointer;
+    }
   }
 `;
 
@@ -54,12 +56,18 @@ export const FormContainer = styled.form`
     justify-content: space-between;
     display: flex;
     flex-direction: row-reverse;
-    padding-top: 12px;
+
+    button {
+      font-size: 16px;
+      margin-top: 16px;
+    }
   }
 
-  .buttons button {
-    font-size: 16px;
-    width: 192px;
+  @media (min-width: 360px) and (max-width: 720px) {
+    .buttons {
+      display: flex;
+      flex-direction: column;
+    }
   }
 `;
 
@@ -67,11 +75,13 @@ export const InputField = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 24px;
+
   label {
     font-weight: bold;
     font-size: 16px;
     color: #2d2d2d;
   }
+
   input {
     border: solid 2px #d9d9d9;
     width: 404px;
@@ -85,5 +95,12 @@ export const InputField = styled.div`
 
   input::placeholder {
     color: rgb(173, 172, 172);
+  }
+
+  /* Smartphones*/
+  @media (min-width: 360px) and (max-width: 720px) {
+    input {
+      width: 300px;
+    }
   }
 `;

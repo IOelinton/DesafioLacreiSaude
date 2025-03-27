@@ -10,7 +10,7 @@ import { PasswordResetContainer } from "./passwordReset.style";
 export default function PasswordReset() {
   const router = useRouter();
 
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState<string>("");
 const handleInput = (e: React.ChangeEvent<HTMLInputElement>) =>{
   setEmail(e.target.value);
   }
