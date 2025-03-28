@@ -56,14 +56,11 @@ export const FormContainer = styled.form`
   .buttons {
     justify-content: space-between;
     display: flex;
+    align-items: center;
     flex-direction: row-reverse;
 
     button {
       font-size: 16px;
-    }
-
-    button:nth-child(2) {
-      margin-top: 16px;
     }
   }
 
@@ -71,6 +68,14 @@ export const FormContainer = styled.form`
     .buttons {
       display: flex;
       flex-direction: column;
+
+      button {
+        width: 100%;
+
+        &:first-child {
+          margin-bottom: 16px;
+        }
+      }
     }
   }
 `;

@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button } from "./Button.styles";
+import { StyledButton } from "./Button.styles";
 
 interface ButtonProps {
     type?: "button" | "submit" | "reset";
@@ -10,17 +10,17 @@ interface ButtonProps {
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-const Buttons = ({ type="button", variant, children, status, onClick }: ButtonProps) => {
+const Button = ({ type="button", variant, children, status, onClick }: ButtonProps) => {
     return (
-        <Button
+        <StyledButton
             type={type}
             className={`${variant}Button`}
             onClick={onClick}
             disabled={!status} // Desabilita o botão se status for false
         >
             {children}
-        </Button>
+        </StyledButton>
     );
 };
 
-export default Buttons;
+export default Button;

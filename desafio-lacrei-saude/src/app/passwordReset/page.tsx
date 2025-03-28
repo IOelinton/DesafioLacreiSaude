@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { InputField } from "@/components/LoginForm/LoginForm.style";
-import { Buttons } from "@/components";
+import { Button } from "@/components";
 import { PasswordResetContainer } from "./passwordReset.style";
 
 export default function PasswordReset() {
@@ -35,12 +35,12 @@ const handleInput = (e: React.ChangeEvent<HTMLInputElement>) =>{
       />
     </InputField>
     <div className="buttons">
-      <Buttons type="submit" variant="primary" onClick={() => alert(`Link enviado para: ${email}`)} status={isEmailValid(email)}>
+      <Button type="submit" variant="primary" onClick={() => alert(`Link enviado para: ${email}`)} status={isEmailValid(email)}>
         Enviar Link
-      </Buttons>
-      <Buttons type="submit"  variant="secondary" onClick={() => router.push("/")} status={true}>
+      </Button>
+      <Button type="submit"  variant="secondary" onClick={() => router.push("/")} status={true}>
         Voltar
-      </Buttons>
+      </Button>
     </div>
     </PasswordResetContainer>
   );

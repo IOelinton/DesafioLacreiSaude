@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 
 import { CreateAcountContainer } from "./createAccount.style";
-import { Buttons } from "@/components";
+import { Button } from "@/components";
 import { InputField } from "@/components/LoginForm/LoginForm.style";
 
 export default function PasswordReset() {
@@ -84,7 +84,6 @@ export default function PasswordReset() {
   }
 
   const saveToLocalStorage = (data: userData) => {
-  console.log(data)
    const existingData = localStorage.getItem("userData");
    const users = existingData ? JSON.parse(existingData) : [];
    users.push(data);
@@ -207,22 +206,22 @@ export default function PasswordReset() {
       </div>
 
       <div className="buttons">
-        <Buttons
+        <Button
           type="submit"
           variant="primary"
           onClick={handleSubmit}
           status={isFormValid}
         >
           Criar Conta
-        </Buttons>
-        <Buttons
+        </Button>
+        <Button
           type="button"
           variant="secondary"
           onClick={() => router.push("/")}
           status={true}
         >
           Voltar
-        </Buttons>
+        </Button>
       </div>
     </CreateAcountContainer>
   );

@@ -26,7 +26,7 @@ git clone git@github.com:IOelinton/DesafioLacreiSaude.git
 
 2. Entre na pasta do projeto:
 ```bash
-cd desafio-lacrei-saude
+cd DesafioLacreiSaude/desafio-lacrei-saude
 ```
 
 3. Instale o que o projeto precisa para funcionar:
@@ -95,11 +95,8 @@ Também é possível realizar o deploy da aplicação em seu ambiente Vercel atr
 - Para problemas de compatibilidade, utilize a versão recomendada do Node.js.
 
 ## 📫 Contato
-[Oelinton Araujo] - [oelinton.dearaujo@gmail.com]
+Oelinton Araujo - [oelinton.dearaujo@gmail.com]
 
 Link do projeto: [https://github.com/IOelinton/DesafioLacreiSaude](https://github.com/IOelinton/DesafioLacreiSaude)
-
-## 📄 Licença
-Este projeto está sob a licença MIT - veja o arquivo [LICENSE.md](LICENSE.md) para mais detalhes.
 
 ---

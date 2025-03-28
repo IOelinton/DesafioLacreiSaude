@@ -2,7 +2,8 @@
 
 import React from "react";
 
-import { profissionais, Profissional } from "@/mocks/profissionais";
+import { Profissional } from "@/types/profissional";
+import { profissionais } from "@/mocks/profissionais";
 
 import { ProfiCard } from "@/components";
 import { ProfileContent } from "./professional.style";

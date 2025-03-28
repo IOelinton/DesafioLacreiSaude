@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 
-import { Buttons } from "@/components";
+import { Button } from "@/components";
 
 import {
   FormContainer,
@@ -52,7 +52,6 @@ const LoginForm = () => {
   useEffect(() => {
     const storedUsers = JSON.parse(localStorage.getItem("userData") || "[]");
     setUsers(storedUsers);
-    console.log(storedUsers);
   }, []);
 
   const handleRedirect = () => {
@@ -96,22 +95,22 @@ const LoginForm = () => {
           />
         </InputField>
         <div className="buttons">
-          <Buttons
+          <Button
             type="button"
             variant="primary"
             status={status}
             onClick={handleRedirect} // Corrigido para usar handleRedirect
           >
             Entrar
-          </Buttons>
-          <Buttons
+          </Button>
+          <Button
             type="button"
             variant="secondary"
             onClick={() => router.push("/createAccount")}
             status={true}
           >
             Criar conta
-          </Buttons>
+          </Button>
         </div>
         <Link href="/passwordReset"> Esqueceu a senha?</Link>
       </FormContainer>

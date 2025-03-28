@@ -22,7 +22,7 @@ export const FooterContainer = styled.footer`
     }
   }
 
-  .socias {
+  .sociais {
     display: flex;
     justify-content: end;
     width: 30%;
@@ -45,7 +45,7 @@ export const FooterContainer = styled.footer`
       flex-direction: column;
     }
 
-    .socias {
+    .sociais {
       justify-content: space-around;
       width: 100%;
       margin-top: 16px;

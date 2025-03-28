@@ -16,7 +16,7 @@ const Footer = () => {
             <Link href="/"><Image src={logoCompleta} alt="Logo Lacrei Saúde" className="logoFooter" /></Link>
             <div className="footer-right">
                 <p>© 2025 Lacrei Saúde. Todos os direitos reservados.</p>
-                <div className="socias">
+                <div className="sociais">
                     <a href="https://www.facebook.com/privacy/consent/inline/?flow=acv_fb_consent_debut_blocking&source=fb_1st_time_3pd_consent_flow">
                     <Image src={Facebook} alt="Facebook" />
                     </a>

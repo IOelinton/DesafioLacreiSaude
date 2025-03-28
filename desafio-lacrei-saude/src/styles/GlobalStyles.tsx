@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 
 export const GlobalStyle = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
       :root {
             /* Background Colors*/
             --background-invert-400: #ffffff;
@@ -45,14 +45,4 @@ export const GlobalStyle = createGlobalStyle`
         background-color: var(--background-invert-400);
         font-size: var(--Text-base);
      }
-
-     /* Monitor Ultra Wide Screen*/
-     @media (min-width: 2560px) {
-   }
-     /* Monitor HD */
-     @media (min-width: 1366px) and (max-width:1920px) {
-   }
-     /* Smartphones*/
-     @media (min-width: 360px) and (max-width:720px) {
-   }
 `;

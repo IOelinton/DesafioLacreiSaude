@@ -1,8 +1,4 @@
-export type Profissional = {
-  name: string;
-  specialty: string;
-  email: string;
-};
+import { Profissional } from "../types/profissional";
 
 export const profissionais: Profissional[] = [
   {
