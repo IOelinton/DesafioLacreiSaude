@@ -10,7 +10,8 @@ export const PasswordResetContainer = styled.div`
   h2 {
     text-align: left;
     font-weight: bold;
-    padding-bottom: 32px;
+    font-size: var(--Headline-sm-high200);
+    padding-bottom: 16px;
     width: 100%;
   }
 

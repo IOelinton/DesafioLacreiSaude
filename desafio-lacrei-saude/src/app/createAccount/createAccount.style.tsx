@@ -72,6 +72,7 @@ export const CreateAcountContainer = styled.div`
     }
 }
 
+
 .buttons {
     width: 100%;
     padding-top: 32px;

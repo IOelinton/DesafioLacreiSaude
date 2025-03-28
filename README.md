@@ -66,9 +66,10 @@ Prints dos testes aprovados:
 Todos os testes dos componentes principais, como `Header`, `Footer` e `Bottons`, foram aprovados com sucesso.
 
 ## ✅ Build and Deploy
+O deploy da aplicação foi realizado com sucesso utilizando a plataforma **Vercel**. Você pode acessar o projeto online através do link:
 
-## 🌐 Link do Projet
-https://desafio-lacrei-saude-ecru.vercel.app/
+- [Deploy no Vercel](https://desafio-lacrei-saude.vercel.app/)
+
 
 ## 📝 Informações Extras
 

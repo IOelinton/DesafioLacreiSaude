@@ -22,7 +22,7 @@ const handleInput = (e: React.ChangeEvent<HTMLInputElement>) =>{
 
   return (
     <PasswordResetContainer>
-    <h2>Redefina sua senha</h2>
+    <h2>Redefina sua senha.</h2>
     <InputField className="inputField">
       <label htmlFor="email">E-mail:</label>
       <input

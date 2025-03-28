@@ -31,7 +31,8 @@ export const LoginFormContainer = styled.div`
 
   a {
     color: #007756;
-    font-size: 20px;
+    font-size: (--Text-base);
+    text-decoration: underline;
     font-weight: 500;
     font-weight: bold;
     text-decoration: #007756;
@@ -59,6 +60,9 @@ export const FormContainer = styled.form`
 
     button {
       font-size: 16px;
+    }
+
+    button:nth-child(2) {
       margin-top: 16px;
     }
   }
