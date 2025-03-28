@@ -61,7 +61,7 @@ yarn run test:coverage
 
 ## ✅ Testes Aprovados
 Prints dos testes aprovados:
-![coverage testes](assets/tests.confirm.png)
+![coverage testes](/desafio-lacrei-saude/assets/tests.confirm.png)
 
 Todos os testes dos componentes principais, como `Header`, `Footer` e `Bottons`, foram aprovados com sucesso.
 
