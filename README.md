@@ -68,8 +68,20 @@ Todos os testes dos componentes principais, como `Header`, `Footer` e `Bottons`,
 ## ✅ Build and Deploy
 O deploy da aplicação foi realizado com sucesso utilizando a plataforma **Vercel**. Você pode acessar o projeto online através do link:
 
-- [Deploy no Vercel](https://desafio-lacrei-saude.vercel.app/)
+- [LacreiSaúde](https://desafio-lacrei-saude-ecru.vercel.app/)
 
+Para realizar o deploy da aplicação em seu ambiente Vercel, basta executar um dos comandos abaixo e completar os passos de configuração de conta:
+
+```bash
+# Deploy em preview
+npm run deploy
+
+# Deploy em produção
+npm run deploy:prod
+```
+
+Também é possível realizar o deploy da aplicação em seu ambiente Vercel através do link abaixo:
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FOelinton%2FDesafioLacreiSaude&project-name=DesafioLacreiSaude&repository-name=DesafioLacreiSaude)
 
 ## 📝 Informações Extras
 
