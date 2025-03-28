@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📱 Desafio Lacrei Saúde
 
-## Getting Started
+## 🌟 Sobre o Projeto
+Olá! Bem-vindo ao **Desafio Lacrei Saúde**! Este projeto é um desafio proposto pela Lacrei Saúde, uma empresa de saúde digital. O objetivo é criar uma interface de usuário para uma aplicação de saúde, utilizando as tecnologias React, Next.js, TypeScript e Styled-Components. Faça o download deste repositório e siga as instruções abaixo para configurar o projeto em seu computador.
 
-First, run the development server:
+### 🛠️ O que usamos para fazer?
+- **React** - Para criar a interface do usuário.
+- **Next.js** - Para renderização do lado do servidor e geração de sites estáticos.
+- **TypeScript** - Para adicionar tipagem estática ao código e melhorar a experiência de desenvolvimento.
+- **Styled-Components** - Para estilização dos componentes utilizando CSS-in-JS.
+- **Jest** - Para testes automatizados e garantia de qualidade.
+- **React Testing Library** - Para testes focados na interação do usuário.
 
+## 🚀 Como fazer funcionar no seu computador
+
+### Antes de começar
+Você vai precisar ter instalado:
+- [Node.js](https://nodejs.org/) (versão 16 ou superior)
+- [Git](https://git-scm.com/)
+
+### Passo a passo
+1. Primeiro, copie o projeto para seu computador:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone git@github.com:IOelinton/DesafioLacreiSaude.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Entre na pasta do projeto:
+```bash
+cd desafio-lacrei-saude
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Instale o que o projeto precisa para funcionar:
+```bash
+npm install
+# ou
+yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Agora é só iniciar:
+```bash
+npm run dev
+# ou
+yarn dev
+```
 
-## Learn More
+Pronto! O projeto deve estar rodando em `http://localhost:3000` 🎉
 
-To learn more about Next.js, take a look at the following resources:
+## ✅ Testes e Aprovação
+Os testes foram implementados utilizando **Jest** e **React Testing Library**. Para rodar os testes:
+```bash
+npm test
+# ou
+yarn test
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Todos os testes dos componentes principais, como `Header` e `Footer`, foram aprovados com sucesso.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📝 Informações Extras
 
-## Deploy on Vercel
+### Funcionalidades Principais
+- Navegação intuitiva e responsiva.
+- Componentes reutilizáveis para consistência visual.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Dicas Úteis
+- Certifique-se de que todas as dependências estão corretamente instaladas antes de rodar o projeto.
+- Para problemas de compatibilidade, utilize a versão recomendada do Node.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📫 Contato
+[Oelinton Araujo] - [oelinton.dearaujo@gmail.com]
+
+Link do projeto: [https://github.com/IOelinton/DesafioLacreiSaude](https://github.com/IOelinton/DesafioLacreiSaude)
+
+## 📄 Licença
+Este projeto está sob a licença MIT - veja o arquivo [LICENSE.md](LICENSE.md) para mais detalhes.
+
+---
