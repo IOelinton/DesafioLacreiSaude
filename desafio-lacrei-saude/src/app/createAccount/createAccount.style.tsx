@@ -82,8 +82,6 @@ export const CreateAcountContainer = styled.div`
 
 
   @media (min-width: 360px) and (max-width: 720px) {
-
-
     .buttons {
       display: flex;
       flex-direction: column;

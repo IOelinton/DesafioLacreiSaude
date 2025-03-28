@@ -1,11 +1,7 @@
-"use client";
-
-import { GlobalStyle } from "@/styles/GlobalStyles";
+// app/layout.tsx (Server Component)
+import { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-
-import {Header, Footer} from "@/components";
-import { MainContent } from "./page.style";
-
+import ClientLayout from "./ClientLayout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,6 +13,11 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const metadata: Metadata = {
+  title: "Desafio Lacrei Saúde",
+  description: "Desafio Lacrei Saúde",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -25,12 +26,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <GlobalStyle/>
-        <MainContent>
-          <Header/>
-          {children}
-          <Footer/>
-        </MainContent>
+        <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
   );
