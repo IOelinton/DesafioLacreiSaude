@@ -1,57 +1,65 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import Buttons from "./Buttons";
+import "@testing-library/jest-dom";
+import Buttons from "./Button";
 
-describe("Buttons Component", () => {
-    test("deve renderizar o botão com o texto correto", () => {
-        render(
-            <Buttons variant="primary" status={true}>
-                Clique aqui
-            </Buttons>
-        );
-        const buttonElement = screen.getByText("Clique aqui");
-        expect(buttonElement).toBeInTheDocument();
-    });
+describe("Componente Botão", () => {
+  test("Verifica a renderização do botão com o texto correto", () => {
+    render(
+      <Buttons variant="primary" status={true}>
+        Click Me
+      </Buttons>
+    );
 
-    test("deve aplicar a classe CSS correspondente ao variant", () => {
-        render(
-            <Buttons variant="secondary" status={true}>
-                Clique aqui
-            </Buttons>
-        );
-        const buttonElement = screen.getByText("Clique aqui");
-        expect(buttonElement).toHaveClass("secondaryButton");
-    });
+    const buttonElement = screen.getByRole("button", { name: /click me/i });
+    expect(buttonElement).toBeInTheDocument();
+  });
 
-    test("deve desabilitar o botão quando status for false", () => {
-        render(
-            <Buttons variant="primary" status={false}>
-                Clique aqui
-            </Buttons>
-        );
-        const buttonElement = screen.getByText("Clique aqui");
-        expect(buttonElement).toBeDisabled();
-    });
+  test("Verifica se o botão possui o comportamento de ativo caso tenha o status true", () => {
+    render(
+      <Buttons variant="primary" status={true}>
+        Enabled Button
+      </Buttons>
+    );
 
-    test("deve habilitar o botão quando status for true", () => {
-        render(
-            <Buttons variant="primary" status={true}>
-                Clique aqui
-            </Buttons>
-        );
-        const buttonElement = screen.getByText("Clique aqui");
-        expect(buttonElement).not.toBeDisabled();
-    });
+    const buttonElement = screen.getByRole("button", { name: /enabled button/i });
+    expect(buttonElement).toBeEnabled();
+  });
 
-    test("deve chamar o evento onClick quando o botão é clicado", () => {
-        const handleClick = jest.fn();
-        render(
-            <Buttons variant="primary" status={true} onClick={handleClick}>
-                Clique aqui
-            </Buttons>
-        );
-        const buttonElement = screen.getByText("Clique aqui");
-        fireEvent.click(buttonElement);
-        expect(handleClick).toHaveBeenCalledTimes(1);
-    });
+  test("Verifica se o botão possui o comportamento de inativo caso tenha o status true", () => {
+    render(
+      <Buttons variant="primary" status={false}>
+        Disabled Button
+      </Buttons>
+    );
+
+    const buttonElement = screen.getByRole("button", { name: /disabled button/i });
+    expect(buttonElement).toBeDisabled();
+  });
+
+  test("Verifica se a callback é chamada ao clickar", () => {
+    const handleClick = jest.fn();
+
+    render(
+      <Buttons variant="primary" status={true} onClick={handleClick}>
+        Clickable Button
+      </Buttons>
+    );
+
+    const buttonElement = screen.getByRole("button", { name: /clickable button/i });
+    fireEvent.click(buttonElement);
+
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+
+  test("Verifica se o estilo do botão é alterado de acordo com a propriedade variant", () => {
+    render(
+      <Buttons variant="primary" status={true}>
+        Primary Button
+      </Buttons>
+    );
+
+    const buttonElement = screen.getByRole("button", { name: /primary button/i });
+    expect(buttonElement).toHaveClass("primaryButton");
+  });
 });
