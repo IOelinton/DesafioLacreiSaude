@@ -1,7 +1,7 @@
 # 📱 Desafio Lacrei Saúde
 
 ## 🌟 Sobre o Projeto
-Olá! Bem-vindo ao **Desafio Lacrei Saúde**! Este projeto é um desafio proposto pela Lacrei Saúde, uma empresa de saúde digital. O objetivo é criar uma interface de usuário para uma aplicação de saúde, utilizando as tecnologias React, Next.js, TypeScript e Styled-Components. Faça o download deste repositório e siga as instruções abaixo para configurar o projeto em seu computador.
+Olá! Bem-vindo ao **Desafio Lacrei Saúde**! Este projeto é um desafio proposto pela Lacrei Saúde, uma empresa de saúde digital.
 
 ### 🛠️ O que usamos para fazer?
 - **React** - Para criar a interface do usuário.
@@ -48,18 +48,31 @@ Pronto! O projeto deve estar rodando em `http://localhost:3000` 🎉
 ## ✅ Testes e Aprovação
 Os testes foram implementados utilizando **Jest** e **React Testing Library**. Para rodar os testes:
 ```bash
-npm test
+npm run test
 # ou
-yarn test
+yarn run test
+```
+Para ver o relatório de cobertura de testes, execute:
+```bash
+npm run test:coverage
+
+# ou
+
+yarn run test:coverage
 ```
 
-Todos os testes dos componentes principais, como `Header` e `Footer`, foram aprovados com sucesso.
+## ✅ Testes Aprovados
+Prints dos testes aprovados:
+<img src="@/assets/tests.confirm.png" alt="print da cobertura dos testes">
+
+Todos os testes dos componentes principais, como `Header`, `Footer` e `Bottons`, foram aprovados com sucesso.
 
 ## 📝 Informações Extras
 
 ### Funcionalidades Principais
 - Navegação intuitiva e responsiva.
 - Componentes reutilizáveis para consistência visual.
+- Testes unitarios para garantir a qualidade do código.
 
 ### Dicas Úteis
 - Certifique-se de que todas as dependências estão corretamente instaladas antes de rodar o projeto.
