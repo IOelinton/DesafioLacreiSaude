@@ -17,8 +17,8 @@ const Header = () => {
   return (
     <HeaderContainer>
         <div className="logo-area">
-            <Link href="/home"><Image src={Logosigla} alt="LS" className="logoSigla"/></Link>
-            <Link href="/home"><Image src={LogoLacrei} alt="lacrei saúde" /></Link>
+            <Link href="/"><Image src={Logosigla} alt="LS" className="logoSigla"/></Link>
+            <Link href="/"><Image src={LogoLacrei} alt="lacrei saúde" /></Link>
         </div>
         <Buttons variant="secondary" onClick={() => router.push('/professionals')} status={true}>Profissionais</Buttons>
     </HeaderContainer>

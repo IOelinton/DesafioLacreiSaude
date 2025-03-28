@@ -12,7 +12,7 @@ const WorkInProgress = () => {
                 Por favor, volte mais tarde para ver as mudanças.
             </p>
             <Link
-                href="/home"
+                href="/"
                 className="linkRedirect"
             >
                Voltar para a página inicial

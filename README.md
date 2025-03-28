@@ -55,15 +55,13 @@ yarn run test
 Para ver o relatório de cobertura de testes, execute:
 ```bash
 npm run test:coverage
-
 # ou
-
 yarn run test:coverage
 ```
 
 ## ✅ Testes Aprovados
 Prints dos testes aprovados:
-<img src="@/assets/tests.confirm.png" alt="print da cobertura dos testes">
+![coverage testes](assets/tests.confirm.png)
 
 Todos os testes dos componentes principais, como `Header`, `Footer` e `Bottons`, foram aprovados com sucesso.
 

@@ -13,7 +13,7 @@ import {FooterContainer} from "./Footer.styles"
 const Footer = () => {
     return (
         <FooterContainer>
-            <Link href="/home"><Image src={logoCompleta} alt="Logo Lacrei Saúde" className="logoFooter" /></Link>
+            <Link href="/"><Image src={logoCompleta} alt="Logo Lacrei Saúde" className="logoFooter" /></Link>
             <div className="footer-right">
                 <p>© 2025 Lacrei Saúde. Todos os direitos reservados.</p>
                 <div className="socias">

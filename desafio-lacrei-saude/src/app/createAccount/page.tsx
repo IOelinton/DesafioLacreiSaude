@@ -104,7 +104,7 @@ export default function PasswordReset() {
         termsAccepted,
       });
       alert("Conta criada com sucesso!");
-      router.push("/home");
+      router.push("/");
     } else {
       alert("Por favor, preencha todos os campos corretamente.");
     }
@@ -218,7 +218,7 @@ export default function PasswordReset() {
         <Buttons
           type="button"
           variant="secondary"
-          onClick={() => router.push("/home")}
+          onClick={() => router.push("/")}
           status={true}
         >
           Voltar
