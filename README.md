@@ -28,9 +28,12 @@ Olá! Bem-vindo ao **Desafio Lacrei Saúde**! Este projeto é um desafio propost
 
 ### Pontos de melhorias:
 - Componentização do input.
-- Simplificação do HandleInput nas telas de login e cadastro.
+- Adicionar feedback visual de erro próximo aos campos dos formulários.
 - Criação da página de perfil para visualização de dados do usuário.
 - Reduzir o número de redundâncias no código CSS.
+- Adicionar botão de revelar senha nos inputs de senha.
+- Adicionar botão de de logout.
+
 
 ## 🚀 Como fazer funcionar no seu computador
 
