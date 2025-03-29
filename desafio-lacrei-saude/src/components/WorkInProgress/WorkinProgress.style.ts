@@ -26,10 +26,8 @@ export const Working = styled.div`
     background-color: #f5f5f5;
     color: #007756;
     font-size: 20px;
-    font-weight: 500;
     font-weight: bold;
-    text-decoration: #007756;
-
+    text-decoration: underline;
     padding-top: 32px;
 
     &.hover {

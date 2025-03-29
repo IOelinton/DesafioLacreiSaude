@@ -210,7 +210,7 @@ export default function PasswordReset() {
           type="submit"
           variant="primary"
           onClick={handleSubmit}
-          status={isFormValid}
+          disabled={!isFormValid}
         >
           Criar Conta
         </Button>
@@ -218,7 +218,6 @@ export default function PasswordReset() {
           type="button"
           variant="secondary"
           onClick={() => router.push("/")}
-          status={true}
         >
           Voltar
         </Button>

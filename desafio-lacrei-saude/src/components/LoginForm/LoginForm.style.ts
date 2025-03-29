@@ -33,9 +33,7 @@ export const LoginFormContainer = styled.div`
     color: #007756;
     font-size: (--Text-base);
     text-decoration: underline;
-    font-weight: 500;
     font-weight: bold;
-    text-decoration: #007756;
     padding-top: 14px;
 
     &:hover {

@@ -98,7 +98,7 @@ const LoginForm = () => {
           <Button
             type="button"
             variant="primary"
-            status={status}
+            disabled={!status}
             onClick={handleRedirect} // Corrigido para usar handleRedirect
           >
             Entrar
@@ -107,7 +107,6 @@ const LoginForm = () => {
             type="button"
             variant="secondary"
             onClick={() => router.push("/createAccount")}
-            status={true}
           >
             Criar conta
           </Button>

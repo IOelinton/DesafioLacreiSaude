@@ -20,7 +20,7 @@ const Header = () => {
             <Link href="/"><Image src={Logosigla} alt="LS" className="logoSigla"/></Link>
             <Link href="/"><Image src={LogoLacrei} alt="lacrei saúde" /></Link>
         </div>
-        <Button variant="secondary" onClick={() => router.push('/professionals')} status={true}>Profissionais</Button>
+        <Button variant="secondary" onClick={() => router.push('/professionals')}>Profissionais</Button>
     </HeaderContainer>
   );
 };
