@@ -1,7 +1,7 @@
 import React from "react";
 import { ProfiCard } from "./ProfCard.Style";
 
-import { Profissional } from "@/mocks/profissionais";
+import { Profissional } from "@/types/profissional";
 
 const ProfCard = ({name, email,  specialty}: Profissional) => {
     return (
